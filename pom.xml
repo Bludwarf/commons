@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.bludwarf</groupId>
+	<artifactId>commons</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<name>Librairies communes</name>
+	<description>Librairies communes de Bludwarf</description>
+
+	<properties>
+		<sourceEncoding>UTF-8</sourceEncoding>
+	</properties>
+
+	<organization>
+		<name>BludCorp</name>
+		<url>https://code.google.com/u/bludwarf/</url>
+	</organization>
+
+	<dependencies>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.8</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.simpleframework</groupId>
+			<artifactId>simple-xml</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>fr.bludwarf</groupId>
+			<artifactId>commons-test</artifactId>
+			<version>1.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.2</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+		
+			<!-- Javadoc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+				</configuration>
+			</plugin>
+			
+			<!-- JAR executable : DebugOnly -->
+			<!-- <plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>fr.bludwarf.commons.TestMain</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin> -->
+			
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<!-- https://code.google.com/p/peter-lavalle/wiki/MavenOnDropBox -->
+	<!-- Pour créer un repo Maven : https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide -->
+	<!-- Voir Skywarrior:pom.xml pour un exemple complet -->
+	<distributionManagement>
+		<repository>
+			<id>dropbox.repo</id>
+			<name>Repository Maven Dropbox</name>
+			<url>file:///D:/Dropbox/Public/mvn-repository</url>
+		</repository>
+		<snapshotRepository>
+			<id>dropbox.repo-dev</id>
+			<name>Repository Maven Dropbox (DEV)</name>
+			<url>file:///D:/Dropbox/Public/mvn-repository/snapshots</url>
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<url>https://code.google.com/p/commons-java/wiki/Index</url>
+</project>

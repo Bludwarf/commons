@@ -1,0 +1,27 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false"
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="File" class="com.bytel.utils.log.PurgedDailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy'-'MM'-'dd" />
+        <param name="File" value="log.log" />
+        <param name="MaxBackupIndex" value="30" />
+        <param name="MaxBackupBySizeIndex" value="5" />
+        <param name="MaxFileSize" value="50MB" />
+        <param name="Threshold" value="DEBUG" />
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- <param name="ConversionPattern" value="%d{yyyy/MM/dd HH:mm:ss,SSS} %5p - %10.10t - %20.20C l.%4.4L %15M - %m%n" /> -->
+			<param name="ConversionPattern" value="%d{dd/MM/yyyy HH:mm:ss,SSS} %5p - %50.50C l.%L %30M - %m%n" />
+        </layout>
+    </appender>
+
+	<!--  Logguer par defaut -->
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="File" />
+	</root>
+
+</log4j:configuration>
+

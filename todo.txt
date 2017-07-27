@@ -1,0 +1,4 @@
+	- http://codebender.denniland.com/a-singleton-base-class-to-implement-the-singleton-pattern-in-c/
+	
+	1.0 :
+		- Lien HTML pour les mails et communicator
